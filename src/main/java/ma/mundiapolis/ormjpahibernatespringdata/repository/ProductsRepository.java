@@ -13,7 +13,6 @@ public interface ProductsRepository extends JpaRepository<Products,Long> {
     List<Products> findByNameContains(String mc);
     List<Products> findByPriceGreaterThan(double price);
 
-
     @Query("select  p from Products p where p.name like :x")
     List<Products> search(@Param("x") String mc);
 
