@@ -35,9 +35,21 @@ import java.util.List;
         System.out.println(products1.getName());
         System.out.println(products1.getQuantity());
         System.out.println("###############");
-
-
-
+        System.out.println("-----------------");
+        List<Products> productsList = productsRepository.findByNameContains("C");
+        productsList.forEach(p->{
+            System.out.println(p);
+        });
+        System.out.println("-----------------");
+        List<Products> productsList2 = productsRepository.search("%C%");
+        productsList2.forEach(p->{
+            System.out.println(p);
+        });
+        System.out.println("-----------------");
+        List<Products> productsList3 = productsRepository.searchByPrice(3000);
+        productsList3.forEach(p->{
+            System.out.println(p);
+        });
 
 
     }
